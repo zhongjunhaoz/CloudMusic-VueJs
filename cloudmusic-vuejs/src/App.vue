@@ -18,5 +18,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+#id {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  // overflow: hidden;
+}
 </style>

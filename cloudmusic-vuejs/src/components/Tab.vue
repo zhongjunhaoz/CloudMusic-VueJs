@@ -57,13 +57,15 @@ export default {
         align-items center
         color #e2cfcd
         text-decoration none
+        font-size 11px
     .tab-item-isSelected
         flex 1
         display flex
         justify-content center
         align-items center
         color #ffffff
-        font-size 14px
+        font-size 13px
+        font-weight 400
         text-decoration none
 </style>
 
