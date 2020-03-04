@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import {transformTime} from '../../assets/TimeChange'
+import { transformTime } from "../../assets/js/TimeChange";
 import { rank } from "../../axios/api";
 export default {
   data() {
@@ -34,8 +34,8 @@ export default {
         idx: 13
       }).then(res => {
         if (res.code == 200) {
-          console.log(res.playlist);
-          console.log(res.playlist.tracks);
+          // console.log(res.playlist);
+          // console.log(res.playlist.tracks);
 
           this.coverImage = res.playlist.coverImgUrl;
           this.rankDesc = res.playlist.description;

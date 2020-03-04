@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import {transformTime} from '../../assets/TimeChange'
+import { transformTime } from "../../assets/js/TimeChange";
 import { rank } from "../../axios/api";
 export default {
   data() {
