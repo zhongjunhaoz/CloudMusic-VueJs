@@ -1,17 +1,15 @@
 <template>
-    <span class="rank-item">
-      <div class="rank-cover">
-        <img :src="coverImage" width="100" height="100" />
+  <div class="rank-item" @click="rankDetail">
+    <div class="rank-cover">
+      <img :src="coverImage" width="100" height="100" />
+    </div>
+    <div class="rank-song">
+      <div v-for="(item,index) in topSong" :key="index" class="songlist">
+        <span style="padding-right:8px">{{index + 1}}.</span>
+        <span>{{item.songerName}} - {{item.name}}</span>
       </div>
-      <div class="rank-song">
-          <span class="rankdesc">
-              {{rankDesc}}
-          </span>
-          <div class="updatedtime">
-              {{updatedTime}}更新
-          </div>
-      </div>
-    </span>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -21,25 +19,40 @@ export default {
   data() {
     return {
       coverImage: "",
-      rankDesc:'',
-      updatedTime:''
+      topSongs: [],
+      topSong: []
     };
   },
-  mounted() {
+  beforeMount() {
     this.getRank();
   },
   methods: {
+    rankDetail() {
+      console.log(this.rankId);
+    },
     getRank() {
       rank({
         idx: 17
       }).then(res => {
         if (res.code == 200) {
-          // console.log(res.playlist);
-          // console.log(res.playlist.tracks);
-
           this.coverImage = res.playlist.coverImgUrl;
-          this.rankDesc = res.playlist.description;
-          this.updatedTime = transformTime(res.playlist.updateTime)
+          this.rankId = res.playlist.id;
+          // console.log(res);
+          // console.log(res.playlist.tracks);
+          res.playlist.tracks.forEach(item => {
+            let songerName = [];
+            // console.log(item)
+            item.ar.forEach(itemA => {
+              // console.log(itemA.name)
+              songerName.push(itemA.name);
+            });
+            this.topSongs.push({
+              name: item.name,
+              songerName: songerName.join("/")
+            });
+          });
+          this.topSong = this.topSongs.slice(0, 3); //截取前三个歌曲
+          // console.log(this.topSong);
         }
       });
     }

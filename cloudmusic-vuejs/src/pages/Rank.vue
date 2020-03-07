@@ -6,6 +6,7 @@
     <rank3></rank3>
     <rank4></rank4>
     <rank5></rank5>
+    <rank6></rank6>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import rank2 from '../components/rank/Rank2'
 import rank3 from '../components/rank/Rank3'
 import rank4 from '../components/rank/Rank4'
 import rank5 from '../components/rank/Rank5'
+import rank6 from '../components/rank/Rank6'
 export default {
   components: {
       rank0,
@@ -23,7 +25,8 @@ export default {
       rank2,
       rank3,
       rank4,
-      rank5
+      rank5,
+      rank6
   },
 };
 </script>

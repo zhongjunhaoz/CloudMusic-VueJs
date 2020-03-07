@@ -32,12 +32,12 @@ export default {
     },
     getRank() {
       rank({
-        idx: 0
+        idx: 10
       }).then(res => {
         if (res.code == 200) {
           this.coverImage = res.playlist.coverImgUrl;
           this.rankId = res.playlist.id;
-          // console.log(res);
+        //   console.log(res);
           // console.log(res.playlist.tracks);
           res.playlist.tracks.forEach(item => {
             let songerName = [];

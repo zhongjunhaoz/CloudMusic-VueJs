@@ -7,9 +7,9 @@
       class="searchInput"
       v-model="songName"
       @input="getSearchValue"
-      @change="search"
+      clearable
     ></el-input>
-    <!-- 实时搜索建议列表 -->
+    <!-- 实时搜索建议列表 @change="search" -->
     <div
       class="search_suggest_result"
       v-for="(item,index) in searchSuggestItem"
@@ -26,6 +26,7 @@
       v-for="(item,index) in searchResult"
       :key="'result'+index"
       v-show="haveResult"
+      @click="getId(item)"
     >
       <div class="search_result_name">{{item.name}}</div>
       <div class="search_result_songer">{{item.songer}} - {{item.album}}</div>
@@ -110,6 +111,9 @@ export default {
       this.songName = item
       this.search()
       
+    },
+    getId(item) {
+      console.log(item)
     }
   }
 };
