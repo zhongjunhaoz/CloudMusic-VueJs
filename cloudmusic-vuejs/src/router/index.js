@@ -19,12 +19,20 @@ export default new Router({
     {
       path: '/rank',
       name: 'Rank',
-      component: () => import('../pages/Rank.vue')
+      component: () => import('../pages/Rank.vue'),
+      children: [
+        
+      ]
     },
     {
       path: '/search',
       name: 'Search',
       component: () => import('../pages/Search.vue')
+    },
+    {
+      path: '/rank/:id',
+      name: "RankDetail",
+      component: () => import('../components/listDetail/RankDetail.vue'), //排行榜详细页
     }
   ]
 })

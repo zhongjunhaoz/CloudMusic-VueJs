@@ -27,8 +27,9 @@ export default {
     this.getRank();
   },
   methods: {
-    rankDetail() {
-      console.log(this.rankId);
+    rankDetail() { //点击排行榜进入详细页，然后传入idx。
+      // console.log(this.rankId);
+      this.$router.push(`/rank/${3}`)
     },
     getRank() {
       rank({
@@ -36,7 +37,7 @@ export default {
       }).then(res => {
         if (res.code == 200) {
           this.coverImage = res.playlist.coverImgUrl;
-          this.rankId = res.playlist.id;
+          // this.rankId = res.playlist.id;
           // console.log(res);
           // console.log(res.playlist.tracks);
           res.playlist.tracks.forEach(item => {
