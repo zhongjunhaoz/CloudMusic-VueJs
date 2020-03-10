@@ -33,6 +33,10 @@ export default new Router({
       path: '/rank/:id',
       name: "RankDetail",
       component: () => import('../components/listDetail/RankDetail.vue'), //排行榜详细页
+    },
+    {
+      path: '/recommend/:id',
+      component: () => import('../components/listDetail/SheetDetail.vue') //歌单详细页
     }
   ]
 })

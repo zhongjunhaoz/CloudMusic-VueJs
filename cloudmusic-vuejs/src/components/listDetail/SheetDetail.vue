@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { rank } from "../../axios/api";
+import { sheetDetaill } from "../../axios/api";
 export default {
   data() {
     return {
@@ -26,12 +26,12 @@ export default {
   },
   methods: {
     getSongList() {
-      rank({
-        idx: this.id
+      sheetDetaill({
+        id: this.id
       }).then(res => {
         if (res.code == 200) {
           this.songList = [];
-          console.log(res);
+          // console.log(res);
           this.name = res.playlist.name;
           res.playlist.tracks.forEach(item => {
             let songers = [];

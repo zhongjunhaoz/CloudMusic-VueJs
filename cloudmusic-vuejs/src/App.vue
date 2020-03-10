@@ -2,9 +2,9 @@
   <div id="app">
     <Title></Title>
     <Tab></Tab>
-    <keep-alive>
+    <!-- <keep-alive> -->
       <router-view></router-view>
-    </keep-alive>
+    <!-- </keep-alive> -->
   </div>
 </template>
 

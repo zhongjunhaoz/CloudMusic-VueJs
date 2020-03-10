@@ -1,5 +1,14 @@
 <template>
     <div>
-        推荐页
+        <SongSheet></SongSheet>
     </div>
 </template>
+
+<script>
+import SongSheet from '../components/SongSheet'
+export default {
+    components: {
+        SongSheet
+    }
+}
+</script>
