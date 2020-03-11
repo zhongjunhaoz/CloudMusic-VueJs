@@ -37,6 +37,10 @@ export default new Router({
     {
       path: '/recommend/:id',
       component: () => import('../components/listDetail/SheetDetail.vue') //歌单详细页
+    },
+    {
+      path: '/MV/:id',
+      component: () => import('../components/listDetail/MVDetail.vue') //MV详细页
     }
   ]
 })
