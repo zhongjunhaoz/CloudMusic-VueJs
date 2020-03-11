@@ -26,7 +26,7 @@ export default {
     methods: {
         getTopMV() {
             topMV({
-                limit: 9
+                limit: 16
             }).then(res => {
                 if (res.code == 200) {
                     // console.log(res)
@@ -70,14 +70,15 @@ export default {
     justify-content center
 }
 .lists {
-  width: 30%;
+  width: 45%;
   display: inline-block;
   padding 4px
+  margin-top 8px
 }
 
 img {
   width: 100%;
-  height: 75%;
+  height: 80%;
   border-radius: 3px;
 }
 .text {

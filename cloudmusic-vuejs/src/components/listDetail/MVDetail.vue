@@ -21,7 +21,7 @@
           <div class="label-child">{{item.time}} 发布</div>
       </div>
 
-      <div class="label-child desc">
+      <div class="label-child desc" v-if="item.desc">
           {{item.desc}}
       </div>
 
