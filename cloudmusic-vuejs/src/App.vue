@@ -3,21 +3,24 @@
     <Title></Title>
     <Tab></Tab>
     <!-- <keep-alive> -->
-      <router-view></router-view>
+    <router-view></router-view>
     <!-- </keep-alive> -->
+    <Play></Play>
   </div>
 </template>
 
 <script>
-import Tab from '../src/components/Tab'
-import Title from './components/Title'
+import Play from '../src/pages/Play'
+import Tab from "../src/components/Tab";
+import Title from "./components/Title";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Title,
-    Tab
+    Tab,
+    Play
   }
-}
+};
 </script>
 
 <style lang="stylus" scoped>

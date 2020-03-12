@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { EventBus } from '../../assets/js/Bus'
 import { sheetDetaill } from "../../axios/api";
 export default {
   data() {
@@ -38,10 +39,11 @@ export default {
             item.ar.forEach(itemA => {
               songers.push(itemA.name);
             });
-            //   console.log(item)
+              // console.log(item)
             this.songList.push({
               id: item.id,
               name: item.name,
+              pic: item.al.picUrl,
               album: item.al.name,
               songer: songers.join("/")
             });
@@ -54,7 +56,8 @@ export default {
       this.$router.go(-1);
     },
     getId(item) {
-      console.log(item);
+      // console.log(item);
+      EventBus.$emit("musicUrl",item)
     }
   }
 };

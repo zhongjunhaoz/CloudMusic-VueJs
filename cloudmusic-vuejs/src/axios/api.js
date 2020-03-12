@@ -13,6 +13,7 @@ const songSheet = params => get(URL_ROOT + '/personalized',params); //推荐歌�
 const sheetDetaill = params => get(URL_ROOT + '/playlist/detail',params); //歌单详细
 const topMV = params => get(URL_ROOT + '/top/mv',params); //topMV
 const MVDetail = params => get(URL_ROOT + '/mv/detail',params); //获取MV播放数据
+const playMusic = params => get(URL_ROOT + '/song/url',params); //获取音乐URL
 
 export {
     rank,
@@ -22,5 +23,6 @@ export {
     songSheet,
     sheetDetaill,
     topMV,
-    MVDetail
+    MVDetail,
+    playMusic
 }

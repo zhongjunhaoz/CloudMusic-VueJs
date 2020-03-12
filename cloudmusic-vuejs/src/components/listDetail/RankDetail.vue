@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { EventBus } from '../../assets/js/Bus'
 import { rank } from "../../axios/api";
 export default {
   data() {
@@ -42,6 +43,7 @@ export default {
             this.songList.push({
               id: item.id,
               name: item.name,
+              pic: item.al.picUrl,
               album: item.al.name,
               songer: songers.join("/")
             });
@@ -55,6 +57,7 @@ export default {
     },
     getId(item) {
       console.log(item);
+      EventBus.$emit("musicUrl",item)
     }
   }
 };

@@ -98,10 +98,12 @@ export default {
               this.searchResult.push({
                 id: item.id,
                 name: item.name,
+                pic: item.album.artist.img1v1Url,
                 album: item.album.name,
                 songer: songers.join("/")
               });
               // console.log(this.searchResult)
+              console.log(item)
             });
             this.hasResult = false
           }
@@ -113,7 +115,8 @@ export default {
       
     },
     getId(item) {
-      console.log(item)
+      // console.log(item)
+      EventBus.$emit("musicUrl",item)
     }
   }
 };
