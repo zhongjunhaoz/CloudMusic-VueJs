@@ -3,7 +3,7 @@
     <Title></Title>
     <Tab></Tab>
     <!-- <keep-alive> -->
-    <router-view></router-view>
+    <router-view class="view"></router-view>
     <!-- </keep-alive> -->
     <Play></Play>
   </div>

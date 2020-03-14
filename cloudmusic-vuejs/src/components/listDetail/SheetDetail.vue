@@ -89,7 +89,7 @@ export default {
   padding: 8px;
   position: absolute;
   left: 0px;
-  z-index: 1000;
+  z-index: 150;
 }
 
 .search_result {

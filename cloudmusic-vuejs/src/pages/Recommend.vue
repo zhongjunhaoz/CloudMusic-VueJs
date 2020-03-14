@@ -21,6 +21,6 @@ export default {
   width: 100%;
   height 86vh
   overflow scroll
-  background-color: #f2f3f4;
+  background-color: #f2f3f4
 }
 </style>>
