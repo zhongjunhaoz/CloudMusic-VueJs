@@ -19,7 +19,8 @@ export default {
     return {
       id: this.$route.params.id,
       name: "",
-      songList: []
+      songList: [],
+      songListId: []
     };
   },
   mounted() {
@@ -32,7 +33,17 @@ export default {
       }).then(res => {
         if (res.code == 200) {
           this.songList = [];
-          // console.log(res);
+
+
+          // // 获取ID数组
+          // this.songListId = []
+          // // console.log(res);
+          // res.playlist.trackIds.forEach(item =>{
+          //   this.songListId.push(item.id)
+          // })
+          // EventBus.$emit('songListId',this.songListId)
+
+
           this.name = res.playlist.name;
           res.playlist.tracks.forEach(item => {
             let songers = [];
@@ -47,7 +58,6 @@ export default {
               album: item.al.name,
               songer: songers.join("/")
             });
-            //   console.log(this.songList)
           });
         }
       });
@@ -57,6 +67,7 @@ export default {
     },
     getId(item) {
       // console.log(item);
+      EventBus.$emit('songListId',this.songList)
       EventBus.$emit("musicUrl",item)
     }
   }
