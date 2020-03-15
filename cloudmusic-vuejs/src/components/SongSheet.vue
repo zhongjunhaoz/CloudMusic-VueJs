@@ -3,7 +3,7 @@
     <div class="title">推荐歌单</div>
     <div class="lists-content">
       <div class="lists" v-for="(item,index) in sheet" :key="index" @click="getId(item.id)">
-        <img :src="item.pic" />
+        <img v-lazy="item.pic" />
         <span class="text">
             {{item.name}}
         </span>

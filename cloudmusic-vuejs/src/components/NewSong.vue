@@ -3,7 +3,7 @@
     <div class="title">最新音乐</div>
     <div class="lists-content">
       <div class="lists" v-for="(item,index) in newsongs" :key="index" @click="getId(item)">
-        <img :src="item.pic" />
+        <img v-lazy="item.pic" />
         <span class="text">
            {{item.songer}} - {{item.name}}
         </span>

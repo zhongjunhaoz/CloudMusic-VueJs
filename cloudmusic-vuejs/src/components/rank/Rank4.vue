@@ -1,7 +1,7 @@
 <template>
   <div class="rank-item" @click="rankDetail">
     <div class="rank-cover">
-      <img :src="coverImage" width="100" height="100" />
+      <img v-lazy="coverImage" width="100" height="100" />
     </div>
     <div class="rank-song">
       <div v-for="(item,index) in topSong" :key="index" class="songlist">

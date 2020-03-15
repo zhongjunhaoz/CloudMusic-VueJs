@@ -3,7 +3,7 @@
     <div class="title">推荐MV</div>
     <div class="lists-content">
       <div class="lists" v-for="(item,index) in MV" :key="index" @click="getId(item.id)">
-        <img :src="item.img" />
+        <img v-lazy="item.img" />
         <span class="text">
             {{item.songer}} - {{item.name}}
         </span>
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { EventBus } from '../assets/js/Bus'
 import { topMV } from "../axios/api"
 export default {
     data() {
@@ -43,6 +44,7 @@ export default {
             })
         },
         getId(id) {
+            EventBus.$emit('pause',false) //点击进入MV详情页，则关闭音乐
             // console.log(id)
             this.$router.push(`/MV/${id}`)
         }

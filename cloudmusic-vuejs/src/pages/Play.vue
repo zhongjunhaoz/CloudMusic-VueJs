@@ -4,7 +4,7 @@
     <!-- 播放mini页 -->
     <div class="palyBox" v-show="this.id">
       <div class="pic" @click="showPlayDetail">
-        <img :src="pic" :class="isplay ? 'cover': 'cover-pause'" />
+        <img v-lazy="pic" :class="isplay ? 'cover': 'cover-pause'" />
       </div>
       <div class="text" @click="showPlayDetail">
         <span class="text-child name">{{name}}</span>
@@ -22,7 +22,7 @@
       <div class="palyDetail-songer">{{songer}}</div>
       <div class="palyDetail-picBox">
         <img
-          :src="pic"
+          v-lazy="pic"
           :class="isplay ? 'playDetail-cover' : 'playDetail-cover-pause'"
           @click="showLyric"
           v-show="isShowLyric"
@@ -64,6 +64,11 @@ export default {
     };
   },
   mounted() {
+    EventBus.$on('pause',val =>{
+      this.musicPause()
+      // this.isplay = val
+      // console.log(val)
+    })
     EventBus.$on("songListId", val =>{
       this.songListId = val
       // console.log(this.songListId)
