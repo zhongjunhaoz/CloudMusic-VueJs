@@ -9,7 +9,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: 'http://zhongjunhaoz.gitee.io/cloudmusic-vuejs',
     proxyTable: {},
 
     // Various Dev Server settings
