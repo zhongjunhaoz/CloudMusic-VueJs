@@ -57,6 +57,7 @@ export default {
     },
     getId(item) {
       console.log(item);
+      EventBus.$emit('songListId',this.songList)
       EventBus.$emit("musicUrl",item)
     }
   }

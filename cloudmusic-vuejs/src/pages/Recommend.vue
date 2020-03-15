@@ -2,14 +2,17 @@
     <div class="recommend">
         <SongSheet></SongSheet>
         <TopMV></TopMV>
+        <NewSong></NewSong>
     </div>
 </template>
 
 <script>
+import NewSong from '../components/NewSong'
 import SongSheet from '../components/SongSheet'
 import TopMV from '../components/TopMV'
 export default {
     components: {
+        NewSong,
         SongSheet,
         TopMV
     }

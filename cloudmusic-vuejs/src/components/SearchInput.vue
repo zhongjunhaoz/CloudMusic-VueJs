@@ -103,7 +103,7 @@ export default {
                 songer: songers.join("/")
               });
               // console.log(this.searchResult)
-              console.log(item)
+              // console.log(item)
             });
             this.hasResult = false
           }
@@ -115,6 +115,7 @@ export default {
       
     },
     getId(item) {
+      EventBus.$emit('songListId',this.searchResult)
       // console.log(item)
       EventBus.$emit("musicUrl",item)
     }

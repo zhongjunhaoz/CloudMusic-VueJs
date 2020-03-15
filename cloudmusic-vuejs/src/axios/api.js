@@ -14,7 +14,7 @@ const sheetDetaill = params => get(URL_ROOT + '/playlist/detail',params); //歌�
 const topMV = params => get(URL_ROOT + '/top/mv',params); //topMV
 const MVDetail = params => get(URL_ROOT + '/mv/detail',params); //获取MV播放数据
 const playMusic = params => get(URL_ROOT + '/song/url',params); //获取音乐URL
-
+const newSong = params => get(URL_ROOT + '/personalized/newsong',params); //最新音乐
 export {
     rank,
     hotSong,
@@ -24,5 +24,6 @@ export {
     sheetDetaill,
     topMV,
     MVDetail,
-    playMusic
+    playMusic,
+    newSong
 }

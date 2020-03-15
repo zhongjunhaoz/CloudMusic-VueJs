@@ -1,6 +1,6 @@
 <template>
   <div>
-    <audio ref="cloudMusic" class="audioBox" autoplay="autoplay" loop="loop" :src="url"></audio>
+    <audio id="music-audio" ref="cloudMusic" class="audioBox" autoplay="autoplay" :src="url" @ended="songEnd"></audio>
     <!-- 播放mini页 -->
     <div class="palyBox" v-show="this.id">
       <div class="pic" @click="showPlayDetail">
@@ -114,6 +114,10 @@ export default {
     musicPlay() {
       this.isplay = true;
       this.$refs.cloudMusic.play();
+    },
+    songEnd() { //结束后自动播放下一首
+      // console.log(111)
+      this.getLastSong()
     }
   }
 };
