@@ -151,7 +151,7 @@ export default {
   bottom: 0;
   width: 100%;
   height: 100%;
-  filter: blur(20px);
+  filter: blur(20px);//虚化
   z-index: -1;
   transform: scale(1.5); /* 和网易云音乐对比了一下，发现也是放大1.5倍 */
 }
